@@ -5,6 +5,7 @@ inside the `search_loop` function.
 
 import sys
 import os
+from BST import BST
 
 def get_char() -> str:
     """
@@ -26,11 +27,11 @@ def get_char() -> str:
     except ImportError:
         # Windows system
         import msvcrt
-        ch =  msvcrt.getch().decode("utf-8")
+        ch =  msvcrt.getwch()
     return ch
 
 
-def search_loop(bst: 'BST') -> None:
+def search_loop(bst:BST) -> None:
     """
     Prompts the user to type a word, and it will display the first 7 autocomplete suggestions
     from a given knowledge base dictionary. The loop runs until the user is pressing ESC to quit.
